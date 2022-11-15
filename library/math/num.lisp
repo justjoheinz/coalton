@@ -10,6 +10,9 @@
    #:coalton-library/functions
    #:coalton-library/utils
    #:coalton-library/math/arith)
+  (:import-from
+   #:coalton-library/hash
+   #:define-sxhash-hasher)
   (:local-nicknames
    (#:bits #:coalton-library/bits)))
 

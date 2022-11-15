@@ -124,6 +124,7 @@
                (:file "types")
                (:file "fixed-size-numbers")
                (:file "classes")
+               (:file "hash")
                (:file "builtin")
                (:file "functions")
                (:file "boolean")

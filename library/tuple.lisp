@@ -2,7 +2,8 @@
   (:use
    #:coalton
    #:coalton-library/builtin
-   #:coalton-library/classes)
+   #:coalton-library/classes
+   #:coalton-library/hash)
   (:export
    #:fst
    #:snd
