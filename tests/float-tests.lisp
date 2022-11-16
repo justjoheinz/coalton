@@ -58,7 +58,7 @@
          l
          (fn (x) (+ 1 (math:tan x)))
          (fn (x)
-           (+ (+ (math:pow (math:sin x) 2) (math:pow (math:cos x) 2))
+           (+ (+ (math:^ (math:sin x) 2) (math:^ (math:cos x) 2))
               (/ (math:sin x) (math:cos x))))))
 
     ;; Inverse Trig
@@ -70,7 +70,7 @@
     (is (test-identity
          l
          (fn (x) (math:asin x))
-         (fn (x) (* 2 (math:atan (/ x (+ 1 (math:sqrt (- 1 (math:pow x 2))))))))))
+         (fn (x) (* 2 (math:atan (/ x (+ 1 (math:sqrt (- 1 (math:^ x 2))))))))))
 
     ;; Logarithm and Exponential
     (is (test-identity

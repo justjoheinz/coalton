@@ -219,7 +219,7 @@ as (atan (/ y x)) when defined and accounting for the quadrant of the (x,y)."
          (cond
            ((or (nan? x) (nan? y)) nan)
            ((and (== x 0) (== y 0)) nan)
-           ((and (< x 0) (< y 1)) nan)
+           ((< x 0) nan)
 
            ;; Allegro signals overflow and underflow errors when using infinity in exponents
            #+allegro
@@ -234,10 +234,7 @@ as (atan (/ y x)) when defined and accounting for the quadrant of the (x,y)."
            (True
             (lisp ,coalton-type (x y)
               (ff:with-float-traps-masked cl:t
-                (cl:let ((res (cl:expt x y)))
-                  (cl:if (cl:complexp res)
-                         (cl:realpart res)
-                         res)))))))
+                (cl:expt x y))))))
 
        (define (exp x)
          (cond
